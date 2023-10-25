@@ -6,15 +6,31 @@
 // 5x, and
 // 6x, contain the same digits.
 
-const arr1 = [];
-const arr2 = [];
+let arr1 = [];
+let arr2 = [];
 
 const checkPermuted = function (arg) {
-  let argString = arg.toString();
-  for (let i = 0; i < arg.length; i++) {
-    arr1 = arr1.push(argString.slice(i, i + 1));
+  // let argString = arg.toString();
+  if (Number(arg * 2).toString().length === arg.toString().length) {
+    console.log(arg);
+    return true;
   }
-  console.log(arr1);
+
+  for (let i = 0; i <= 6; i++) {
+    arr1.push(arg * i);
+  }
+  if (arr1 === arg) {
+    // return console.log("TRUE");
+  }
+  return false;
 };
 
-checkPermuted(125874);
+let i = 8;
+while (i < 1000) {
+  i++;
+  if (checkPermuted(i)) {
+    console.log(i);
+    break;
+  }
+}
+// console.log(arr1);
