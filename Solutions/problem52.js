@@ -6,6 +6,15 @@
 // 5x, and
 // 6x, contain the same digits.
 
-let u = 0;
+const arr1 = [];
+const arr2 = [];
 
-const checkPermuted = function (arg) {};
+const checkPermuted = function (arg) {
+  let argString = arg.toString();
+  for (let i = 0; i < arg.length; i++) {
+    arr1 = arr1.push(argString.slice(i, i + 1));
+  }
+  console.log(arr1);
+};
+
+checkPermuted(125874);
