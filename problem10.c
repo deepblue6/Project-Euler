@@ -22,21 +22,21 @@ bool isPrime(int n) {
 }
 
 int main() {
-    long long int bigNum = 1999999;
+    long long int bigNum = 2000000;
     long long int primeCounter = 0;
     long long int c = 0;
-    long long int sums = 0;
+    long long int primeSums = 0;
 
     while (1) {
+        if (bigNum <= primeSums) {
+            printf("%lld\n", c);   // Use %lld for long long
+            printf("%lld\n", primeSums); // Use %lld for long long
+                break;
+            }
         c++;
         if (isPrime(c)) {
             primeCounter++;
-            sums = sums + primeCounter;
-            if (bigNum <= c) {
-                printf("%d\n", c);
-                printf("%d\n", sums);
-                break;
-            }
+            primeSums = primeSums + c;
         }
     }
 
